@@ -74,18 +74,18 @@ export const KpiCard: React.FC<KpiCardProps> = ({
       } ${className}`}
     >
       <div className="flex items-center justify-between gap-2 mb-2">
-        <span className="text-[11px] font-semibold uppercase tracking-wider text-secondary dark:text-[#94a3b8]">
+        <span className="text-[11px] font-semibold uppercase tracking-wider text-secondary dark:text-[#94a3b8] truncate">
           {label}
         </span>
         {badgeText && (
-          <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold ${badgeStyles}`}>
+          <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold whitespace-nowrap inline-flex items-center justify-center shrink-0 ${badgeStyles}`}>
             {badgeText}
           </span>
         )}
       </div>
 
-      <div className="my-1.5">
-        <span className={`text-2xl md:text-3xl font-bold tracking-tight ${valueStyles}`}>
+      <div className="my-1.5 overflow-hidden">
+        <span className={`text-2xl md:text-3xl font-bold tracking-tight whitespace-nowrap inline-block ${valueStyles}`}>
           {renderFormattedValue(value)}
         </span>
       </div>

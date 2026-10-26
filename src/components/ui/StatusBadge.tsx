@@ -88,10 +88,10 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold tracking-wider uppercase font-mono ${badgeColor} ${className}`}
+      className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold tracking-wider uppercase font-mono whitespace-nowrap shrink-0 ${badgeColor} ${className}`}
     >
       {showDot && (
-        <span className="relative flex h-2 w-2">
+        <span className="relative flex h-2 w-2 shrink-0">
           {shouldPulse && (
             <span
               className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${dotColor}`}
@@ -100,7 +100,7 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({
           <span className={`relative inline-flex rounded-full h-2 w-2 ${dotColor}`} />
         </span>
       )}
-      <span>{displayText}</span>
+      <span className="whitespace-nowrap">{displayText}</span>
     </span>
   );
 };

@@ -169,9 +169,12 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       key: 'runOutHours',
       header: 'Buffer',
       align: 'center' as const,
+      className: 'whitespace-nowrap',
+      headerClassName: 'whitespace-nowrap',
+      width: '120px',
       render: (b: CustomerBuffer) => (
         <span
-          className={`font-mono font-bold text-xs px-2.5 py-0.5 rounded-full ${
+          className={`inline-flex items-center justify-center font-mono font-bold text-xs px-2.5 py-0.5 rounded-full whitespace-nowrap shrink-0 ${
             b.runOutHours < 3.0
               ? 'bg-error-container text-on-error-container dark:bg-red-950/80 dark:text-red-300 border border-error/40'
               : b.runOutHours < 6.0
@@ -199,12 +202,14 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       key: 'penalty',
       header: 'Penalty Exposure',
       align: 'right' as const,
+      className: 'whitespace-nowrap',
+      headerClassName: 'whitespace-nowrap',
       render: (b: CustomerBuffer) => {
         const exposure = b.runOutHours < 3.0 ? (3.0 - b.runOutHours) * b.penaltyPerHourINR : 0;
         const conv = convertCurrency(exposure, 'INR', baseCurrency, currencyRates, fxShocks);
         return (
           <span
-            className={`font-mono font-bold text-xs ${
+            className={`font-mono font-bold text-xs whitespace-nowrap ${
               exposure > 0 ? 'text-error dark:text-[#f87171]' : 'text-secondary dark:text-[#94a3b8]'
             }`}
           >
@@ -268,7 +273,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
             </span>
             <p className="text-xs md:text-sm text-on-surface dark:text-[#f8fafc] truncate">
               <strong className="font-semibold text-on-surface dark:text-white">Tata Motors Sanand Corridor</strong>{' '}
-              buffer depleted to <span className="text-error dark:text-red-400 font-bold">{customerBuffers[0]?.runOutHours ?? 1.8} hrs</span>. Expedited convoy{' '}
+              buffer depleted to <span className="text-error dark:text-red-400 font-bold whitespace-nowrap">{customerBuffers[0]?.runOutHours ?? 1.8} hrs</span>. Expedited convoy{' '}
               <span className="bg-surface-container-lowest dark:bg-[#0b111e] dark:border dark:border-[#222e4a] px-1.5 py-0.5 rounded font-mono font-bold text-primary dark:text-cyan-300">
                 MH-14-GH-4091
               </span>{' '}

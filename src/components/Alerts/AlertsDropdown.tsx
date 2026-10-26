@@ -117,22 +117,22 @@ export const AlertsDropdown: React.FC<AlertsDropdownProps> = ({
               {/* Live Countdown & Actions */}
               <div className="mt-2 flex items-center justify-between gap-2 pt-1 border-t border-outline-variant/10 dark:border-[#222e4a]/40">
                 {alert.runOutHours !== undefined ? (
-                  <div className="flex items-center gap-1 text-[10px] font-mono font-bold text-error dark:text-red-400">
-                    <span className="material-symbols-outlined text-[13px]">timer</span>
-                    <span>{formatCountdown(alert.runOutHours)} to line stop</span>
+                  <div className="flex items-center gap-1 text-[10px] font-mono font-bold text-error dark:text-red-400 whitespace-nowrap shrink-0">
+                    <span className="material-symbols-outlined text-[13px] shrink-0">timer</span>
+                    <span className="whitespace-nowrap">{formatCountdown(alert.runOutHours)} to line stop</span>
                   </div>
                 ) : (
-                  <span className="text-[10px] text-secondary dark:text-[#64748b]">
+                  <span className="text-[10px] text-secondary dark:text-[#64748b] whitespace-nowrap">
                     {alert.createdAt}
                   </span>
                 )}
 
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1 shrink-0">
                   <button
                     type="button"
                     onClick={() => onSnooze(alert.id, 15)}
                     title="Snooze this alert for 15 minutes"
-                    className="px-2 py-0.5 rounded text-[10px] font-semibold bg-surface-container dark:bg-[#1e293b] text-secondary dark:text-[#94a3b8] hover:text-on-surface dark:hover:text-white hover:bg-surface-container-high transition-colors"
+                    className="px-2 py-0.5 rounded text-[10px] font-semibold bg-surface-container dark:bg-[#1e293b] text-secondary dark:text-[#94a3b8] hover:text-on-surface dark:hover:text-white hover:bg-surface-container-high transition-colors whitespace-nowrap"
                   >
                     Snooze 15m
                   </button>
@@ -140,7 +140,7 @@ export const AlertsDropdown: React.FC<AlertsDropdownProps> = ({
                     type="button"
                     onClick={() => onAcknowledge(alert.id)}
                     title="Acknowledge alert"
-                    className="px-2 py-0.5 rounded text-[10px] font-semibold bg-primary text-white hover:bg-primary-container transition-colors shadow-xs"
+                    className="px-2 py-0.5 rounded text-[10px] font-semibold bg-primary text-white hover:bg-primary-container transition-colors shadow-xs whitespace-nowrap"
                   >
                     Acknowledge
                   </button>

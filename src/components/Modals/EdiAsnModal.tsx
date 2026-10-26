@@ -368,7 +368,7 @@ export const EdiAsnModal: React.FC<EdiAsnModalProps> = ({
                 <span className="text-xs font-bold text-on-surface dark:text-white">
                   E-Way Bill Validity Window
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-container dark:bg-[#162035] text-secondary border border-outline-variant/30 font-semibold">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-container dark:bg-[#162035] text-secondary border border-outline-variant/30 font-semibold whitespace-nowrap shrink-0">
                   {validity.validDays} Day{validity.validDays > 1 ? 's' : ''} ({validity.validHours}h)
                 </span>
               </div>
@@ -381,7 +381,7 @@ export const EdiAsnModal: React.FC<EdiAsnModalProps> = ({
           {/* Live Countdown Badge */}
           <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">
             <div
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold border ${
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold border whitespace-nowrap shrink-0 ${
                 validity.badgeColor === 'green'
                   ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30'
                   : validity.badgeColor === 'amber'
@@ -389,10 +389,10 @@ export const EdiAsnModal: React.FC<EdiAsnModalProps> = ({
                   : 'bg-error/10 text-error dark:text-red-400 border-error/30'
               }`}
             >
-              <span className="material-symbols-outlined text-[14px]">
+              <span className="material-symbols-outlined text-[14px] shrink-0">
                 {validity.badgeColor === 'green' ? 'schedule' : validity.badgeColor === 'amber' ? 'warning' : 'cancel'}
               </span>
-              <span>{validity.formattedCountdown}</span>
+              <span className="whitespace-nowrap">{validity.formattedCountdown}</span>
             </div>
           </div>
         </div>

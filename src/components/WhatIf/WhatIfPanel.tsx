@@ -212,7 +212,7 @@ export const WhatIfPanel: React.FC = () => {
               <label className="text-[11px] font-bold text-secondary dark:text-[#94a3b8] uppercase tracking-wider">
                 Transit Delay (0 to 24h)
               </label>
-              <span className={`text-xs font-mono font-bold px-2 py-0.5 rounded ${
+              <span className={`text-xs font-mono font-bold px-2 py-0.5 rounded whitespace-nowrap inline-flex items-center ${
                 delayHours > 0
                   ? 'text-error dark:text-red-400 bg-error/10 dark:bg-red-950/40'
                   : 'text-secondary bg-surface-container dark:bg-[#162035]'
@@ -249,7 +249,7 @@ export const WhatIfPanel: React.FC = () => {
                 simulationResult.affectedOEMs.map((oem) => (
                   <span
                     key={oem}
-                    className="px-2 py-0.5 rounded-full text-xs font-bold bg-primary/10 text-primary dark:text-indigo-400 border border-primary/20"
+                    className="px-2 py-0.5 rounded-full text-xs font-bold bg-primary/10 text-primary dark:text-indigo-400 border border-primary/20 whitespace-nowrap inline-flex items-center"
                   >
                     {oem}
                   </span>
@@ -268,7 +268,7 @@ export const WhatIfPanel: React.FC = () => {
               Total Line-Stop Duration
             </span>
             <div className="mt-1">
-              <span className={`text-xl font-mono font-bold ${
+              <span className={`text-xl font-mono font-bold whitespace-nowrap inline-block ${
                 simulationResult.totalHoursOfLineStop > 0 ? 'text-error dark:text-red-400' : 'text-emerald-600 dark:text-emerald-400'
               }`}>
                 {simulationResult.totalHoursOfLineStop.toFixed(1)} hrs
@@ -287,16 +287,16 @@ export const WhatIfPanel: React.FC = () => {
               Penalty Exposure (INR)
             </span>
             <div className="mt-1">
-              <div className="flex items-baseline gap-2 font-mono">
-                <span className="text-sm line-through text-secondary">
+              <div className="flex items-baseline gap-1.5 font-mono flex-wrap">
+                <span className="text-sm line-through text-secondary whitespace-nowrap">
                   {formatCurrencyValue(convertedPenaltyBefore, baseCurrency)}
                 </span>
-                <span className="text-xs text-error font-bold">→</span>
-                <span className="text-lg font-bold text-error dark:text-red-400">
+                <span className="text-xs text-error font-bold whitespace-nowrap">→</span>
+                <span className="text-lg font-bold text-error dark:text-red-400 whitespace-nowrap">
                   {formatCurrencyValue(convertedPenaltyAfter, baseCurrency)}
                 </span>
               </div>
-              <span className="text-[11px] font-mono text-error font-bold block mt-0.5">
+              <span className="text-[11px] font-mono text-error font-bold block mt-0.5 whitespace-nowrap">
                 +{formatCurrencyValue(convertedPenaltyDelta, baseCurrency)} Delta
               </span>
             </div>
@@ -335,12 +335,12 @@ export const WhatIfPanel: React.FC = () => {
           <table className="w-full text-left text-xs border-collapse">
             <thead>
               <tr className="bg-surface-container-high dark:bg-[#162035] text-[11px] uppercase tracking-wider text-secondary dark:text-[#94a3b8] border-b border-outline-variant/30 dark:border-[#222e4a]">
-                <th className="py-2.5 px-3.5 font-bold">OEM Customer & Assembly</th>
-                <th className="py-2.5 px-3 text-center font-bold">Run-Out Before</th>
-                <th className="py-2.5 px-3 text-center font-bold">Run-Out After</th>
-                <th className="py-2.5 px-3 text-center font-bold">Line Stop</th>
-                <th className="py-2.5 px-3.5 text-right font-bold">Penalty Before</th>
-                <th className="py-2.5 px-3.5 text-right font-bold">Penalty After</th>
+                <th className="py-2.5 px-3.5 font-bold whitespace-nowrap">OEM Customer & Assembly</th>
+                <th className="py-2.5 px-3 text-center font-bold whitespace-nowrap">Run-Out Before</th>
+                <th className="py-2.5 px-3 text-center font-bold whitespace-nowrap">Run-Out After</th>
+                <th className="py-2.5 px-3 text-center font-bold whitespace-nowrap">Line Stop</th>
+                <th className="py-2.5 px-3.5 text-right font-bold whitespace-nowrap">Penalty Before</th>
+                <th className="py-2.5 px-3.5 text-right font-bold whitespace-nowrap">Penalty After</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-outline-variant/20 dark:divide-[#222e4a]/60">
@@ -380,10 +380,10 @@ export const WhatIfPanel: React.FC = () => {
                         : 'bg-surface-container-lowest/50 dark:bg-[#0c1220] opacity-75'
                     }`}
                   >
-                    <td className="py-2.5 px-3.5">
-                      <div className="font-bold text-on-surface dark:text-white flex items-center gap-1.5">
+                    <td className="py-2.5 px-3.5 whitespace-nowrap">
+                      <div className="font-bold text-on-surface dark:text-white flex items-center gap-1.5 whitespace-nowrap">
                         <span>{item.oemName}</span>
-                        {isAffected && <span className="w-1.5 h-1.5 rounded-full bg-error" />}
+                        {isAffected && <span className="w-1.5 h-1.5 rounded-full bg-error shrink-0" />}
                       </div>
                       <div className="text-[11px] text-secondary dark:text-[#94a3b8] truncate max-w-xs">
                         {item.partDescription} ({item.plantLocation})
@@ -391,66 +391,66 @@ export const WhatIfPanel: React.FC = () => {
                     </td>
 
                     {/* Run-Out Hours Before */}
-                    <td className="py-2.5 px-3 text-center font-mono">
-                      <span className="px-2 py-0.5 rounded bg-surface-container dark:bg-[#1a253d] text-secondary font-semibold">
+                    <td className="py-2.5 px-3 text-center font-mono whitespace-nowrap">
+                      <span className="px-2 py-0.5 rounded bg-surface-container dark:bg-[#1a253d] text-secondary font-semibold whitespace-nowrap inline-flex items-center justify-center shrink-0">
                         {item.runOutHoursBefore.toFixed(1)}h
                       </span>
                     </td>
 
                     {/* Run-Out Hours After */}
-                    <td className="py-2.5 px-3 text-center font-mono">
+                    <td className="py-2.5 px-3 text-center font-mono whitespace-nowrap">
                       {isAffected ? (
-                        <div className="inline-flex items-center gap-1.5">
-                          <span className="text-secondary line-through text-[11px]">
+                        <div className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap">
+                          <span className="text-secondary line-through text-[11px] whitespace-nowrap">
                             {item.runOutHoursBefore.toFixed(1)}h
                           </span>
-                          <span className="text-error font-bold">→</span>
-                          <span className={`px-2 py-0.5 rounded font-bold border ${statusBg}`}>
+                          <span className="text-error font-bold whitespace-nowrap">→</span>
+                          <span className={`px-2 py-0.5 rounded font-bold border whitespace-nowrap inline-flex items-center justify-center shrink-0 ${statusBg}`}>
                             {item.runOutHoursAfter.toFixed(1)}h
                           </span>
                         </div>
                       ) : (
-                        <span className="px-2 py-0.5 rounded bg-surface-container dark:bg-[#1a253d] text-secondary">
+                        <span className="px-2 py-0.5 rounded bg-surface-container dark:bg-[#1a253d] text-secondary whitespace-nowrap inline-flex items-center justify-center shrink-0">
                           {item.runOutHoursBefore.toFixed(1)}h
                         </span>
                       )}
                     </td>
 
                     {/* Hours of Line Stop */}
-                    <td className="py-2.5 px-3 text-center font-mono font-bold">
+                    <td className="py-2.5 px-3 text-center font-mono font-bold whitespace-nowrap">
                       {item.hoursOfLineStop > 0 ? (
-                        <span className="px-2 py-0.5 rounded bg-error/15 text-error dark:text-red-300 border border-error/30">
+                        <span className="px-2 py-0.5 rounded bg-error/15 text-error dark:text-red-300 border border-error/30 whitespace-nowrap inline-flex items-center justify-center shrink-0">
                           {item.hoursOfLineStop.toFixed(1)}h Stop
                         </span>
                       ) : (
-                        <span className="text-secondary dark:text-[#94a3b8] font-normal">
+                        <span className="text-secondary dark:text-[#94a3b8] font-normal whitespace-nowrap">
                           0.0h
                         </span>
                       )}
                     </td>
 
                     {/* Penalty Exposure Before */}
-                    <td className="py-2.5 px-3.5 text-right font-mono text-secondary">
+                    <td className="py-2.5 px-3.5 text-right font-mono text-secondary whitespace-nowrap">
                       {item.penaltyExposureBeforeINR > 0 ? (
-                        <span>{formatCurrencyValue(convertedPenBefore, baseCurrency)}</span>
+                        <span className="whitespace-nowrap">{formatCurrencyValue(convertedPenBefore, baseCurrency)}</span>
                       ) : (
-                        <span className="text-emerald-600 dark:text-emerald-400 text-xs">₹0.00</span>
+                        <span className="text-emerald-600 dark:text-emerald-400 text-xs whitespace-nowrap">₹0.00</span>
                       )}
                     </td>
 
                     {/* Penalty Exposure After */}
-                    <td className="py-2.5 px-3.5 text-right font-mono font-bold">
+                    <td className="py-2.5 px-3.5 text-right font-mono font-bold whitespace-nowrap">
                       {item.penaltyExposureAfterINR > 0 ? (
-                        <div className="text-error dark:text-red-400">
-                          <span>{formatCurrencyValue(convertedPenAfter, baseCurrency)}</span>
+                        <div className="text-error dark:text-red-400 whitespace-nowrap">
+                          <span className="whitespace-nowrap">{formatCurrencyValue(convertedPenAfter, baseCurrency)}</span>
                           {item.penaltyDeltaINR > 0 && (
-                            <span className="text-[10px] block text-error/80">
+                            <span className="text-[10px] block text-error/80 whitespace-nowrap">
                               (+{formatCurrencyValue(convertCurrency(item.penaltyDeltaINR, 'INR', baseCurrency, currencyRates, fxShocks), baseCurrency)})
                             </span>
                           )}
                         </div>
                       ) : (
-                        <span className="text-emerald-600 dark:text-emerald-400 text-xs font-semibold">
+                        <span className="text-emerald-600 dark:text-emerald-400 text-xs font-semibold whitespace-nowrap">
                           ₹0.00 (Safe)
                         </span>
                       )}

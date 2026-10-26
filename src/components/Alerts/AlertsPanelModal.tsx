@@ -258,9 +258,9 @@ export const AlertsPanelModal: React.FC<AlertsPanelModalProps> = ({
 
                     {/* Live Countdown Badge for Buffers */}
                     {alert.runOutHours !== undefined && (
-                      <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container dark:bg-[#1a253d] border border-outline-variant/30 dark:border-[#2a395c] shrink-0 font-mono text-xs font-bold text-error dark:text-red-400">
-                        <span className="material-symbols-outlined text-[15px] animate-pulse">timer</span>
-                        <span>{formatCountdown(alert.runOutHours)} to line stop</span>
+                      <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container dark:bg-[#1a253d] border border-outline-variant/30 dark:border-[#2a395c] shrink-0 font-mono text-xs font-bold text-error dark:text-red-400 whitespace-nowrap">
+                        <span className="material-symbols-outlined text-[15px] animate-pulse shrink-0">timer</span>
+                        <span className="whitespace-nowrap">{formatCountdown(alert.runOutHours)} to line stop</span>
                       </div>
                     )}
                   </div>

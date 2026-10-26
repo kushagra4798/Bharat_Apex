@@ -188,11 +188,11 @@ export const SupplierEdiHubView: React.FC<SupplierEdiHubViewProps> = ({
                     {/* Live E-Way Bill Validity Countdown Badge */}
                     <div
                       title={`Validity: ${validity.validDays}d (${validity.validHours}h) based on ${distance} km transit · illustrative constant EWB_KM_PER_DAY = 200`}
-                      className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono font-bold border ${badgeClasses}`}
+                      className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono font-bold border whitespace-nowrap shrink-0 ${badgeClasses}`}
                     >
-                      <span className="material-symbols-outlined text-[13px]">{badgeIcon}</span>
-                      <span>{validity.formattedCountdown}</span>
-                      <span className="text-[10px] opacity-75 hidden sm:inline">(illustrative)</span>
+                      <span className="material-symbols-outlined text-[13px] shrink-0">{badgeIcon}</span>
+                      <span className="whitespace-nowrap">{validity.formattedCountdown}</span>
+                      <span className="text-[10px] opacity-75 hidden sm:inline whitespace-nowrap">(illustrative)</span>
                     </div>
                   </div>
 

@@ -523,14 +523,14 @@ export const FleetLogisticsMap: React.FC<FleetLogisticsMapProps> = ({ onExpedite
                 <div className="grid grid-cols-2 gap-2 pt-1 border-t border-outline-variant/20 dark:border-[#1f2c47] text-[10px] font-mono">
                   <div>
                     <span className="text-secondary dark:text-[#94a3b8] block">ETA to Plant</span>
-                    <span className="font-bold text-on-surface dark:text-white">
+                    <span className="font-bold text-on-surface dark:text-white whitespace-nowrap">
                       {(truck.etaMinutes / 60).toFixed(1)} hrs ({truck.etaMinutes}m)
                     </span>
                   </div>
                   <div>
                     <span className="text-secondary dark:text-[#94a3b8] block">Buffer Status</span>
                     <span
-                      className={`font-bold ${
+                      className={`font-bold whitespace-nowrap ${
                         targetBuffer && targetBuffer.runOutHours < 3.0
                           ? 'text-error'
                           : 'text-emerald-500'
