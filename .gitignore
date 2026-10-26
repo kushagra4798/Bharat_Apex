@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+
+# Production Build Output
+dist/
+dist-ssr/
+*.local
+
+# Vercel Deployment
+.vercel/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Vite & TypeScript Cache
+.vite/
+*.tsbuildinfo
+
+# Test Coverage
+coverage/
+
+# Review and Archives
+review.zip
+*.zip
+*.tar.gz
+
+# Editor & IDE Directories
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

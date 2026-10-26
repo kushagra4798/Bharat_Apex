@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-background: #f8f9ff;
+    --color-surface: #f8f9ff;
+    --color-surface-dim: #cbdbf5;
+    --color-surface-bright: #f8f9ff;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #eff4ff;
+    --color-surface-container: #e5eeff;
+    --color-surface-container-high: #dce9ff;
+    --color-surface-container-highest: #d3e4fe;
+    --color-surface-variant: #d3e4fe;
+    
+    --color-on-background: #0b1c30;
+    --color-on-surface: #0b1c30;
+    --color-on-surface-variant: #464555;
+    --color-inverse-surface: #213145;
+    --color-inverse-on-surface: #eaf1ff;
+    
+    --color-outline: #777587;
+    --color-outline-variant: #c7c4d8;
+    
+    --color-primary: #4f46e5;
+    --color-primary-container: #4f46e5;
+    --color-on-primary: #ffffff;
+    --color-on-primary-container: #dad7ff;
+    
+    --color-secondary: #565e74;
+    --color-secondary-container: #dae2fd;
+    --color-on-secondary: #ffffff;
+    --color-on-secondary-container: #5c647a;
+    
+    --color-tertiary: #059669;
+    --color-tertiary-container: #d1fae5;
+    --color-on-tertiary: #ffffff;
+    --color-on-tertiary-container: #065f46;
+    
+    --color-error: #ba1a1a;
+    --color-error-container: #ffdad6;
+    --color-on-error: #ffffff;
+    --color-on-error-container: #93000a;
+  }
+
+  .dark {
+    --color-background: #070b14;
+    --color-surface: #070b14;
+    --color-surface-dim: #050811;
+    --color-surface-bright: #1e293b;
+    --color-surface-container-lowest: #0b111e;
+    --color-surface-container-low: #0d1726;
+    --color-surface-container: #10192b;
+    --color-surface-container-high: #172238;
+    --color-surface-container-highest: #1f2c47;
+    --color-surface-variant: #162032;
+    
+    --color-on-background: #f1f5f9;
+    --color-on-surface: #f8fafc;
+    --color-on-surface-variant: #94a3b8;
+    --color-inverse-surface: #0f172a;
+    --color-inverse-on-surface: #f8fafc;
+    
+    --color-outline: #475569;
+    --color-outline-variant: #243352;
+    
+    --color-primary: #6366f1;
+    --color-primary-container: #4f46e5;
+    --color-on-primary: #ffffff;
+    --color-on-primary-container: #e0e7ff;
+    
+    --color-secondary: #94a3b8;
+    --color-secondary-container: #1a2942;
+    --color-on-secondary: #ffffff;
+    --color-on-secondary-container: #e0f2fe;
+    
+    --color-tertiary: #34d399;
+    --color-tertiary-container: #064e3b;
+    --color-on-tertiary: #003824;
+    --color-on-tertiary-container: #6ffbbe;
+    
+    --color-error: #f87171;
+    --color-error-container: #450a0a;
+    --color-on-error: #ffffff;
+    --color-on-error-container: #fecaca;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
+  }
+
+  .font-mono, [data-mono] {
+    font-family: 'JetBrains Mono', monospace;
+    font-feature-settings: "tnum" 1, "cv05" 1, "zero" 1;
+  }
+}
+
+@theme {
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-dim: var(--color-surface-dim);
+  --color-surface-bright: var(--color-surface-bright);
+  --color-surface-container-lowest: var(--color-surface-container-lowest);
+  --color-surface-container-low: var(--color-surface-container-low);
+  --color-surface-container: var(--color-surface-container);
+  --color-surface-container-high: var(--color-surface-container-high);
+  --color-surface-container-highest: var(--color-surface-container-highest);
+  --color-surface-variant: var(--color-surface-variant);
+
+  --color-on-background: var(--color-on-background);
+  --color-on-surface: var(--color-on-surface);
+  --color-on-surface-variant: var(--color-on-surface-variant);
+  --color-inverse-surface: var(--color-inverse-surface);
+  --color-inverse-on-surface: var(--color-inverse-on-surface);
+
+  --color-outline: var(--color-outline);
+  --color-outline-variant: var(--color-outline-variant);
+
+  --color-primary: var(--color-primary);
+  --color-primary-container: var(--color-primary-container);
+  --color-on-primary: var(--color-on-primary);
+  --color-on-primary-container: var(--color-on-primary-container);
+
+  --color-secondary: var(--color-secondary);
+  --color-secondary-container: var(--color-secondary-container);
+  --color-on-secondary: var(--color-on-secondary);
+  --color-on-secondary-container: var(--color-on-secondary-container);
+
+  --color-tertiary: var(--color-tertiary);
+  --color-tertiary-container: var(--color-tertiary-container);
+  --color-on-tertiary: var(--color-on-tertiary);
+  --color-on-tertiary-container: var(--color-on-tertiary-container);
+
+  --color-error: var(--color-error);
+  --color-error-container: var(--color-error-container);
+  --color-on-error: var(--color-on-error);
+  --color-on-error-container: var(--color-on-error-container);
+}
+
+/* Custom SCADA Leaflet Popups */
+.scada-leaflet-popup .leaflet-popup-content-wrapper {
+  background: #ffffff;
+  color: #0b1c30;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+  padding: 4px;
+}
+
+.dark .scada-leaflet-popup .leaflet-popup-content-wrapper {
+  background: #0b111e;
+  color: #f8fafc;
+  border-color: #243352;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
+.scada-leaflet-popup .leaflet-popup-tip {
+  background: #ffffff;
+}
+
+.dark .scada-leaflet-popup .leaflet-popup-tip {
+  background: #0b111e;
+}
+
+.scada-leaflet-popup .leaflet-popup-close-button {
+  color: #94a3b8 !important;
+  padding: 6px !important;
+}
+
+.scada-leaflet-popup .leaflet-popup-close-button:hover {
+  color: #4f46e5 !important;
+}
+
+.dark .scada-leaflet-popup .leaflet-popup-close-button:hover {
+  color: #ffffff !important;
+}
+
+/* Dark mode filter applied ONLY to Leaflet tile pane */
+.dark .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(0.9);
+}
+
+/* Show truck/plant marker labels only on hover or when selected */
+.custom-plant-div-icon .marker-label,
+.custom-truck-div-icon .marker-label {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(2px);
+  transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.custom-plant-div-icon:hover .marker-label,
+.custom-truck-div-icon:hover .marker-label,
+.custom-plant-div-icon.is-selected .marker-label,
+.custom-truck-div-icon.is-selected .marker-label {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
